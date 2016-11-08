@@ -47,6 +47,11 @@ public class UriBuilderExamplesTest {
 	public void buildUrlWithSpringUriBuilderMap() {
 		String urlString = uriBuilderExamples.buildUrlWithSpringUriBuilderMap();
 		System.out.println(urlString);
-
 	}
+
+    @Test
+    public void buildUrlWithSpringUriBuilderWithParams() {
+        String urlString = uriBuilderExamples.buildUrlWithSpringUriBuilderWithParams();
+        System.out.println(urlString);
+    }
 }

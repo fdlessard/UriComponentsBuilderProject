@@ -42,11 +42,13 @@ public class UriBuilderExamples {
         return String.format("%s/%s/%s/%s", url1, pathFragment1, pathFragment2, pathFragment3);
     }
 
-
     public String buildUrlWithStringJoin() {
 
         return String.join("/", url1, pathFragment1, pathFragment2, pathFragment3);
     }
+
+
+
 
 
     public String buildUrlWithSpringUriBuilder() {
@@ -63,8 +65,16 @@ public class UriBuilderExamples {
         map.put("pathFragmentThree", pathFragment3);
 
         return UriComponentsBuilder.fromUriString(url2).buildAndExpand(map).toUriString();
-
     }
+
+    public String buildUrlWithSpringUriBuilderWithParams() {
+
+        return UriComponentsBuilder.fromUriString(url2).
+                queryParam("firstName", "Mark").
+                buildAndExpand(pathFragment1,pathFragment2, pathFragment3).
+                toUriString();
+    }
+
 
 }
 
