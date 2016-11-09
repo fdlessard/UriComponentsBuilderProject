@@ -19,6 +19,9 @@ public class UriBuilderExamples {
     @Value("${url1}")
     private String url1;
 
+    @Value("${url2}")
+    private String url2;
+
     @Value("${pathfragment1}")
     private String pathFragment1;
 
@@ -28,8 +31,9 @@ public class UriBuilderExamples {
     @Value("${pathfragment3}")
     private String pathFragment3;
 
-    @Value("${url2}")
-    private String url2;
+
+    private String tenant = "tenantOne";
+    private String version = "v1";
 
 
     public String buildUrlWithStringConcatenation() {
@@ -53,16 +57,15 @@ public class UriBuilderExamples {
 
     public String buildUrlWithSpringUriBuilder() {
 
-        return UriComponentsBuilder.fromUriString(url2).buildAndExpand(pathFragment1,pathFragment2, pathFragment3).toUriString();
+        return UriComponentsBuilder.fromUriString(url2).buildAndExpand(tenant, version).toUriString();
 
     }
 
     public String buildUrlWithSpringUriBuilderMap() {
 
         Map<String, String> map = new HashMap<>();
-        map.put("pathFragmentOne", pathFragment1);
-        map.put("pathFragmentTwo", pathFragment2);
-        map.put("pathFragmentThree", pathFragment3);
+        map.put("tenant", tenant);
+        map.put("version", version);
 
         return UriComponentsBuilder.fromUriString(url2).buildAndExpand(map).toUriString();
     }
@@ -71,7 +74,7 @@ public class UriBuilderExamples {
 
         return UriComponentsBuilder.fromUriString(url2).
                 queryParam("firstName", "Mark").
-                buildAndExpand(pathFragment1,pathFragment2, pathFragment3).
+                buildAndExpand(tenant, version).
                 toUriString();
     }
 
