@@ -1,4 +1,4 @@
-package io.fdlessard.codesamples.uribuilder;
+package io.fdlessard.codebites.uribuilder;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.support.ManagedArray;

@@ -1,4 +1,4 @@
-package io.fdlessard.codesamples.uribuilder;
+package io.fdlessard.codebites.uribuilder;
 
 import org.junit.Before;
 import org.junit.Test;
