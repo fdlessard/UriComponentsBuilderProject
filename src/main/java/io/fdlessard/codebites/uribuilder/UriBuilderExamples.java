@@ -15,7 +15,6 @@ import java.util.Map;
 @Component
 public class UriBuilderExamples {
 
-
     @Value("${url1}")
     private String url1;
 
@@ -31,8 +30,8 @@ public class UriBuilderExamples {
     @Value("${pathfragment3}")
     private String pathFragment3;
 
-
     private String tenant = "tenantOne";
+
     private String version = "v1";
 
 
